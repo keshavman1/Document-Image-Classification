@@ -12,6 +12,7 @@ print (tf.__version__)
 
 PATH_TO_SAVED_MODEL = "Trained_Models\\loc_model1\\saved_model" #Input the path where the model of detection and localization is
 new_model = tf.keras.models.load_model("Trained_Models\\cnn_model")
+
 print('Loading model...', end='')
 start_time = time.time()
 
@@ -39,6 +40,7 @@ result = cv2.VideoWriter('detected.avi',
 while True:
     success, image_np = cap.read()
     if success:
+        
         input_tensor = tf.convert_to_tensor(image_np)
         input_tensor = input_tensor[tf.newaxis, ...]
         detections = detect_fn(input_tensor)

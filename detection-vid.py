@@ -40,6 +40,7 @@ xmax1=0
 xmax2=0
 ymax1=0
 ymax2=0
+
 warnings.filterwarnings('ignore')   
 
 cap = cv2.VideoCapture(0)
@@ -50,6 +51,7 @@ while True:
     if success:
         input_tensor = tf.convert_to_tensor(image_np)
         input_tensor = input_tensor[tf.newaxis, ...]
+        
         detections = detect_fn(input_tensor)
     
         num_detections = int(detections.pop('num_detections'))
