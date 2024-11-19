@@ -1,28 +1,77 @@
-# logo and num plate repo
-Summary:-
+# Logo and Number Plate Detection and Prediction
+Jan 2023 - Feb 2023
 
-In this project tensorflow object detecting module is used to train the object detection model using RESNET 640 x 640 architecture, the dataset was self collected and was annotated for logo and number plate using labelimg tool
-Used a CNN for car logo brand prediction (logo brand prediction is limited to these 8 brands namely "Hyundai","Lexus","Mercedes","Opel","Skoda","Toyota","Volkswagen","Mazda" due to lack of dataset), the dataset was trained on Xception CNN architecture which is a slightly advanced version of inception V3.Training on this model resulted in a validation accuracy of 86%.
-For the number plate part, easyocr library is used to produce string output by reading the number plate.
+This project focuses on detecting logos and reading number plates from images or videos. It uses advanced deep learning techniques such as ResNet for object detection and Xception CNN for car logo brand prediction. Additionally, EasyOCR is used for number plate recognition. The model is deployed via a Gradio interface for easy access.
 
-Further more, the model for detection on images is deployed using the gradio interface.
+---
+## 📌 Features
+-Logo Detection: Detects logos from a predefined set of 8 brands (Hyundai, Lexus, Mercedes, Opel, Skoda, Toyota, Volkswagen, Mazda).
+-Brand Prediction: Identifies the brand of the detected logo using a trained CNN model with an accuracy of 86%.
+-Number Plate Recognition: Uses the EasyOCR library to detect and read number plates.
+-Object Detection: Utilizes the ResNet 640x640 architecture for training the object detection model.
+-Gradio Interface: A user-friendly interface for easy image and video processing.
 
-Installation:-
-
-The required libraries need to be installed listed in the requirements.txt file.
-
-In order to run the programs clone the repo on colab and run the required detection files. 
-
-How to run:-
-
-For detection on images use detection-image.py file 
-For performing detection using webcam or videofile upload, it can be done using detection-vid.py file 
-(For the video part, based on the detection scores the program keeps storing the images with the highest detection scores. The prediction and recognition on these images can be displayed by pressing 'q'. However, for performing the predicition and recognition on a desired frame, pressing 'w' would do the job.
-pressing 'a' would break the operation.
-
-On running detection-to-video.py file (Input method be video file or webcam) an avi video file named 'detected.avi' will be saved on a fps rate of 20 in the working directory (pressing 'a' would stop the saving)
+---
+---
 
 
+### 🛠️ Technologies Used
+Deep Learning Frameworks: TensorFlow, Keras
+Languages: Python
+Libraries: EasyOCR, Gradio, OpenCV, NumPy, Matplotlib, PIL
+Models: Convolutional Neural Networks (CNNs), ResNet, Xception
+Tools: LabelImg (for dataset annotation)
 
+### 📦 Installation
+-Prerequisites
+-Ensure you have the following installed:
 
+Python 3.8+
+pip (Python package manager)
 
+### Clone the Repository
+```bash
+Copy code
+git clone https://github.com/<your-username>/Logo-and-Number-Plate-Detection.git
+cd Logo-and-Number-Plate-Detection
+```
+
+### Install Dependencies
+```bash
+Copy code
+pip install -r requirements.txt
+```
+### 📸 How to Run
+Image Detection
+To perform logo and number plate detection on an image, run the following script:
+
+```bash
+Copy code
+python detection-image.py
+Video/ Webcam Detection
+```
+
+To perform detection using a webcam or video file, run the following script:
+
+```bash
+Copy code
+python detection-vid.py
+```
+In this mode, the program will store images with the highest detection scores. To view predictions and recognition on these images, press 'q'. To perform predictions on a specific frame, press 'w'. To stop the process, press 'a'.
+
+### Video Output
+To generate a video with detection annotations, run the following script:
+
+```bash
+Copy code
+python detection-to-video.py
+```
+
+This will generate an AVI video file named detected.avi in the working directory, with a frame rate of 20 FPS. Press 'a' to stop saving the video.
+
+### 📂 Dataset
+The dataset was self-collected and annotated using the LabelImg tool. It contains images of cars with logos from 8 different brands, as well as number plate images for OCR.
+
+### 📈 Model Performance
+Logo Brand Prediction: Achieved a validation accuracy of 86% using the Xception CNN architecture for brand classification.
+Object Detection: Trained on the ResNet 640x640 architecture to detect logos and number plates with high accuracy.
