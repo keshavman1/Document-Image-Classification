@@ -31,14 +31,12 @@ pip (Python package manager)
 
 ### Clone the Repository
 ```bash
-Copy code
 git clone https://github.com/<your-username>/Logo-and-Number-Plate-Detection.git
 cd Logo-and-Number-Plate-Detection
 ```
 
 ### Install Dependencies
 ```bash
-Copy code
 pip install -r requirements.txt
 ```
 ### 📸 How to Run
@@ -46,7 +44,6 @@ Image Detection
 To perform logo and number plate detection on an image, run the following script:
 
 ```bash
-Copy code
 python detection-image.py
 Video/ Webcam Detection
 ```
@@ -54,7 +51,6 @@ Video/ Webcam Detection
 To perform detection using a webcam or video file, run the following script:
 
 ```bash
-Copy code
 python detection-vid.py
 ```
 In this mode, the program will store images with the highest detection scores. To view predictions and recognition on these images, press 'q'. To perform predictions on a specific frame, press 'w'. To stop the process, press 'a'.
@@ -63,7 +59,6 @@ In this mode, the program will store images with the highest detection scores. T
 To generate a video with detection annotations, run the following script:
 
 ```bash
-Copy code
 python detection-to-video.py
 ```
 
